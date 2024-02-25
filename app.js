@@ -136,13 +136,13 @@ class tilt {
 
   handleDeviceOrientation(e) {
     const tiltValue = 80;
-    const offsetX = (e.beta || 0) / 0;
-    const offsetY = (e.gamma || 0) / 0;
+    const offsetX = (e.beta || 0) / 150;
+    const offsetY = (e.gamma || 0) / 150;
 
     const transformValue = `rotateX(${tiltValue * offsetY}deg) rotateY(${tiltValue * offsetX}deg)`;
     this.element.style.transform = transformValue;
 
-    const glareTransformValue = `translate(${offsetX * 400}px, ${-offsetY * 400}px)`;
+    const glareTransformValue = `translate(${-offsetX * 400}px, ${-offsetY * 400}px)`;
     this.glareElement.style.transform = glareTransformValue;
   }
 
