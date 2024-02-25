@@ -135,16 +135,20 @@ class tilt {
   }
 
   handleDeviceOrientation(e) {
-    const sensitivity = 200;
+    const sensitivity = 20;
+
+    const beta = e.beta || 0;
+    const gamma = e.gamma || 0;
+
+    const alpha = (beta * sensitivity) + (gamma * sensitivity);
 
     const tiltValue = 80;
-    const offsetX = (e.beta || 0) / 90 * sensitivity;
-    const offsetY = (e.gamma || 0) / 90 * sensitivity;
+    
 
-    const transformValue = `rotateX(${tiltValue * offsetY}deg) rotateY(${tiltValue * offsetX}deg)`;
+    const transformValue = `rotateX(${tiltValue * beta}deg) rotateY(${tiltValue * gamma}deg) rotateZ(${alpha}deg)`;
     this.element.style.transform = transformValue;
 
-    const glareTransformValue = `translate(${-offsetX * 400}px, ${-offsetY * 400}px)`;
+    const glareTransformValue = `translate(${gamma * 400}px, ${-beta * 400}px)`;
     this.glareElement.style.transform = glareTransformValue;
   }
 
