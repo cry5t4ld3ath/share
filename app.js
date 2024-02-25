@@ -135,9 +135,11 @@ class tilt {
   }
 
   handleDeviceOrientation(e) {
+    const sensitivity = 2;
+
     const tiltValue = 80;
-    const offsetX = (e.beta || 0) / 400;
-    const offsetY = (e.gamma || 0) / 400;
+    const offsetX = (e.beta || 0) / 90 * sensitivity;
+    const offsetY = (e.gamma || 0) / 90 * sensitivity;
 
     const transformValue = `rotateX(${tiltValue * offsetY}deg) rotateY(${tiltValue * offsetX}deg)`;
     this.element.style.transform = transformValue;
