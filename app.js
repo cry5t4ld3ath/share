@@ -140,7 +140,7 @@ class tilt {
     const beta = e.beta || 0;
     const gamma = e.gamma || 0;
 
-    const alpha = (beta * sensitivity) + (gamma * sensitivity);
+    const alpha = beta + gamma
 
     const tiltValue = 80;
     
@@ -148,7 +148,7 @@ class tilt {
     const transformValue = `rotateX(${tiltValue * beta}deg) rotateY(${tiltValue * gamma}deg) rotateZ(${alpha}deg)`;
     this.element.style.transform = transformValue;
 
-    const glareTransformValue = `translate(${gamma * 400}px, ${-beta * 400}px)`;
+    const glareTransformValue = `translate(${gamma * 50}px, ${-beta * 50}px)`;
     this.glareElement.style.transform = glareTransformValue;
   }
 
