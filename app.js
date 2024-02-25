@@ -135,7 +135,7 @@ class tilt {
   }
 
   handleDeviceOrientation(e) {
-    const sensitivity = 2;
+    const sensitivity = 200;
 
     const tiltValue = 80;
     const offsetX = (e.beta || 0) / 90 * sensitivity;
