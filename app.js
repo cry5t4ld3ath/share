@@ -136,8 +136,8 @@ class tilt {
 
   handleDeviceOrientation(e) {
     const tiltValue = 80;
-    const offsetX = (e.beta || 0) / 90;
-    const offsetY = (e.gamma || 0) / 90;
+    const offsetX = (e.beta || 0) / 20;
+    const offsetY = (e.gamma || 0) / 20;
 
     const transformValue = `rotateX(${tiltValue * offsetY}deg) rotateY(${tiltValue * offsetX}deg)`;
     this.element.style.transform = transformValue;
