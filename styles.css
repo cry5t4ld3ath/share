@@ -25,12 +25,12 @@ i {
 /* ************ font ****************** */
 @font-face {
   font-family: punk;
-  src: url(/font/DeathMohawk_PERSONAL_USE_ONLY.otf);
+  src: url(/share/font/DeathMohawk_PERSONAL_USE_ONLY.otf);
 }
 
 @font-face {
   font-family: gothic;
-  src: url(/font/Aligator.otf);
+  src: url(/share/font/Aligator.otf);
 }
 
 /* ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ */
