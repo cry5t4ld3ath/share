@@ -135,7 +135,7 @@ class tilt {
   }
 
   handleDeviceOrientation(e) {
-    const sensitivity = 20;
+    const sensitivity = 2;
 
     const beta = e.beta || 0;
     const gamma = e.gamma || 0;
