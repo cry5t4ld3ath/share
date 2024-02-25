@@ -142,7 +142,7 @@ class tilt {
     const transformValue = `rotateX(${tiltValue * offsetY}deg) rotateY(${tiltValue * offsetX}deg)`;
     this.element.style.transform = transformValue;
 
-    const glareTransformValue = `translate(${-offsetX * 400}px, ${offsetY * 400}px)`;
+    const glareTransformValue = `translate(${offsetX * 400}px, ${-offsetY * 400}px)`;
     this.glareElement.style.transform = glareTransformValue;
   }
 
