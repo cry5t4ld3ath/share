@@ -11,6 +11,17 @@ body,html {
   scroll-behavior: smooth;
 }
 
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #191919;
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #94000073;
+  border-radius: 20px;
+}
+
+
 li {
   list-style-type: none;
 }
@@ -25,12 +36,12 @@ i {
 /* ************ font ****************** */
 @font-face {
   font-family: punk;
-  src: url(/share/font/DeathMohawk_PERSONAL_USE_ONLY.otf);
+  src: url(/font/DeathMohawk_PERSONAL_USE_ONLY.otf);
 }
 
 @font-face {
   font-family: gothic;
-  src: url(/share/font/Aligator.otf);
+  src: url(/font/Aligator.otf);
 }
 
 /* ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ */
@@ -115,6 +126,7 @@ i {
   height: 100%;
   display: grid;
   place-items: center;
+  cursor: pointer;
 }
 .header-list-center a{
   color: #ff0000;
@@ -177,6 +189,7 @@ i {
   margin-bottom: 1rem;
   font-size: 2rem;
   color: #cf00a2;
+  cursor: default;
 }
 
 .submenu-center {
@@ -225,6 +238,7 @@ i {
   transition: all 0.5s ease-out;
   font-family: gothic;
   z-index: 99999;
+  position: fixed;
 }
 
 .sidebar-container {
@@ -274,47 +288,14 @@ i {
 }
 
 
-.tilt-container {
-  width: 60%;
-  height: 60%;
-  perspective: 1000px;
-  display: grid;
-  place-items: center;  
-  position: relative; 
-  overflow: hidden;
-  box-shadow:0 0 20px #ff0000; 
-  border-radius: 20px;
-  border: 3px solid #e70000;
-}
-
-.tilt-element {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.1s linear;
-}
-
-.rr {
-  width: 100%;
-  height: 100%;
-}
-
-.glare{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
 /* ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ */
 
 
 /* ************  SECTION  *************** */
-.section1, .section2{
-  height: 100vh;
-  display: grid;
-  place-items: center;
+.section1 , .section2 , .section3 {
+  height: 150vh;
+  display: flex;
+  justify-content: center;
 }
 
 

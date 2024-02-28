@@ -72,10 +72,12 @@ sidebar.innerHTML = listLink.map( item => {
 
 hamburgerIcon.addEventListener('click' , () => {
   sidebarHeader.classList.add('show');
+  document.body.style.overflow = "hidden";
 });
 
 buttonClose.addEventListener('click' , () => {
   sidebarHeader.classList.remove('show');
+  document.body.style.overflow = "";
 })
 
 
@@ -88,82 +90,6 @@ const headerContainer = () => {
     containerHeader.classList.toggle('header-container' , !(scrollY > 80));
 
 }
-
-
-// ********************* class ************************
-class tilt {
-  constructor(containerSelector) {
-    this.container = document.querySelector(containerSelector);
-    this.element = this.container.querySelector('.tilt-element');
-    this.glareElement = this.element.querySelector('.rr')
-
-
-    this.init();
-    this.setupEventListeners();
-  }
-
-  init() {
-
-    if (window.DeviceOrientationEvent) {
-      window.addEventListener('deviceorientation' , this.handleDeviceOrientation.bind(this));
-    } else {
-      this.container.addEventListener('mousemove' , this.handleMouseMove.bind(this));
-      this.container.addEventListener("mouseleave" , this.resetTransform.bind(this));
-    }
-
-  }
-
-  setupEventListeners() {
-    this.container.addEventListener('click' , this.handleContainerClick.bind(this))
-  }
-
-  handleMouseMove(e) {
-    const {clientX , clientY } = e;
-    const containerRect = this.container.getBoundingClientRect();
-    const offsetX = (clientX - containerRect.left) / containerRect.width - 0.5 ;
-    const offsetY = (clientY - containerRect.top) / containerRect.height - 0.5 ; 
-
-    const tiltValue = 80;
-    const transformValue = `rotateX(${tiltValue * offsetY}deg) rotateY(${tiltValue * offsetX}deg)`;
-
-    this.element.style.transform = transformValue;
-
-    // Adjust glare position based on mouse movement
-    const glareTransformValue = `translate(${-offsetX * 500}px, ${-offsetY * 500}px)`;
-    this.glareElement.style.transform = glareTransformValue;
-
-  }
-
-  handleDeviceOrientation(e) {
-    const sensitivity = 2;
-
-    const beta = e.beta || 0;
-    const gamma = e.gamma || 0;
-
-    const alpha = beta + gamma
-
-    const tiltValue = 80;
-    
-
-    const transformValue = `rotateX(${tiltValue * beta}deg) rotateY(${tiltValue * gamma}deg) rotateZ(${alpha}deg)`;
-    this.element.style.transform = transformValue;
-
-    const glareTransformValue = `translate(${gamma * 50}px, ${-beta * 50}px)`;
-    this.glareElement.style.transform = glareTransformValue;
-  }
-
-  resetTransform() {
-    this.element.style.transform = "none";
-    this.glareElement.style.transform = "none";
-  }
-
-  handleContainerClick() {
-    alert('container clicked!')
-  }
-  
-};
-
-const tiltr = new tilt('.tilt-container');
 
 
 // ************* show function ****************
@@ -190,3 +116,12 @@ header.addEventListener('mouseover' , e => {
     subMenu.classList.remove('show');
   }
 })
+
+
+
+
+
+
+
+
+
